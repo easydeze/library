@@ -1,0 +1,53 @@
+body {
+    font-family: Roboto, 'sans-serif';
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    font-size: 26px;
+    font-weight: 700;
+    box-shadow: 0 4px 6px -6px #222;
+    padding-left: 20px;
+
+}
+
+.main {
+    text-align: center;
+}
+
+.add:hover {
+    cursor: pointer;
+    box-shadow: rgba(211, 82, 8, 0.866) 0px 20px 25px -5px, rgba(0, 0, 0, 0.939) 0px 10px 10px -5px;
+    transform: scale(1.1);
+}
+
+.add {
+    border-radius: 25px;
+    width: 200px;
+    height: 30px;
+    transition: transform 500ms;
+    margin-bottom: 50px;
+}
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 50px;
+}
+
+display {
+    border: solid;
+    border-radius: 25px;
+}
+
+.form {
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+}
