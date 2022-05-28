@@ -40,6 +40,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 50px;
+    text-align: center;
 }
 
 display {
@@ -47,6 +48,7 @@ display {
     border: solid;
     border-radius: 25px;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 form {
@@ -82,3 +84,14 @@ form {
     bottom: 0;
     background-color: rgba(0,0,0,0.5);
 }
+
+.remove {
+    margin: 30px;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: rgba(8, 184, 211, 0.866) 0px 10px 10px -5px, rgba(0, 0, 0, 0.939) 0px 1px 1px -5px;
+    transform: scale(1.1);
+}
+
