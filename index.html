@@ -5,26 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "style.css">
+    <link rel = "stylesheet" href = "skeleton.css">
+    <link rel = "stylesheet" href = "normalize.css">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Library</title>
 </head>
 <body>
-    <div class = "wrapper">
-        <div class = "header">
-            <h1>welcome to the library.</h1>
-        </div>
-        <div class = "main">
-            <button class = "add">add a new book.</button>
-            <div class = "library"></div>
-            <div class = "no-popup">
-                <section>
-                    <form>
-                        <label for 
-                    </form>
-                </section>
+    <div class = "overlay">
+        <div class = "wrapper">
+            <div class = "header">
+                <h1>welcome to the library.</h1>
             </div>
+            <div class = "main">
+                <button class = "add">add a new book.</button>
+                <div class = "library"></div>
+            <div class = "footer"></div>
         </div>
-        <div class = "footer"></div>
+    </div>
+
+    <div class = "modal">
+        <form id = "form">
+            <div class = "row">
+                <label for="inputTitle">title</label>
+                <input class="u-full-width" type="text" placeholder="Adventures of Huckleberry Finn" id="inputTitle" required>
+            </div>
+            <div class = "row">
+                <label for="inputAuthor">author</label>
+                <input class="u-full-width" type="text" placeholder="Mark Twain" id="inputAuthor" required>
+            </div>
+            <div class = "row">
+                <label for="inputPages">number of pages</label>
+                <input class="u-full-width" type="number" placeholder="366" id="inputPages" required>
+            </div>
+            <div class = "row">
+                <label class="example-send-yourself-copy">
+                    <input type="checkbox" id = "read">
+                    <span class="label-body">have you read this novel?</span>
+                </label>
+            </div>
+            <input type = "submit" class = "submit">
+        </form>
     </div>
     <script src = "script.js"></script>
 </body>

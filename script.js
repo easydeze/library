@@ -1,13 +1,25 @@
+//REFERENCES TO HTML
 let myLibrary = [];
+let isFormOpen = false;
 const library = document.querySelector('.library');
 const input = document.querySelector('.add');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay')
+const submit = document.getElementById('form')
 
-input.addEventListener('click', togglePopup());
+//POPUP FORM
+input.addEventListener('click', () => {
+  if (modal.classList.contains('active')) {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+  else {
+    modal.classList.add('active');
+    overlay.classList.add('active');
+  }
+})
 
-function popup() {
-    
-}
-
+//Book, library functions and constructors
 function Book(title, author, numpages, is_read) {
   this.title = title
   this.author = author
@@ -30,7 +42,7 @@ function displayBooks() {
         let author = document.createElement('p');
         author.innerHTML = "author: " + book.author;
         let numpages = document.createElement('p');
-        numpages.innerHTML = "number of pages: " +book.numpages;
+        numpages.innerHTML = "number of pages: " + book.numpages;
         let isread = document.createElement('p');
         isread.innerHTML = "has the book been read?: " + book.is_read;
         let display = document.createElement('display');
@@ -42,12 +54,21 @@ function displayBooks() {
     })
 }
 
-temp1 = new Book("The Great Gatsby", "Tom Hanks", 100, true);
-temp2 = new Book("Huckleberry Finn", "Martin Lockheed", 271, true);
-temp3 = new Book("Tom Sawyer", "Danny Zhang", 342, true);
+function populateBook() {
+  const title = document.getElementById('inputTitle').value;
+  const author = document.getElementById('inputAuthor').value;
+  const pages = document.getElementById('inputPages').value;
+  const read = document.getElementById('read').checked;
+  console.log(title);
+  return new Book(title, author, pages, read);
+}
 
-addBookToLibrary(temp1);
-addBookToLibrary(temp2);
-addBookToLibrary(temp3);
+function addBook(e) {
+  e.preventDefault();
+  const tempBook = populateBook();
+  addBookToLibrary(tempBook);
+  library.replaceChildren();
+  displayBooks();
+}
 
-displayBooks();
+submit.addEventListener('submit', addBook);
